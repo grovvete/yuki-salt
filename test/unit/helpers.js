@@ -7,11 +7,11 @@ module.exports.each = (t, cases) => (text, fn) =>
 const makeDescription = (text, args) => {
 	const values = Array.isArray(args)
 		? args
-		: [ args ]
+		: [args]
 	return values.reduce((prev, v) => prev.replace('{}', v), text)
 }
 
-module.exports.message = send => ({
+module.exports.message = (send = () => { }) => ({
 	channel: { send },
 })
 
